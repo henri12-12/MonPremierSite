@@ -1,0 +1,235 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f2f2f2;
+    color: #222;
+}
+
+header {
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 30px;
+}
+
+nav {
+    margin-bottom: 25px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+main {
+    max-width: 900px;
+    margin: auto;
+    padding: 30px;
+}
+
+section {
+    background-color: white;
+    margin-bottom: 25px;
+    padding: 25px;
+    border-radius: 10px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+}
+
+.bouton {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: #0078d4;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+.bouton:hover {
+    background-color: #005a9e;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+header {
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+section {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    margin-top: 0;
+}
+
+.projets {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.projet {
+    flex: 1;
+    min-width: 200px;
+    padding: 20px;
+    background-color: #f8f8f8;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    transition: transform 0.2s;
+}
+
+.projet:hover {
+    transform: translateY(-5px);
+}
+
+.projet h3 {
+    margin-top: 0;
+}
+
+.retour-haut {
+    display: block;
+    width: fit-content;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #222;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+}
+
+.retour-haut:hover {
+    background-color: #444;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    transition: transform 0.2s;
+}
+
+nav a:hover {
+    transform: translateY(-2px);
+}
+
+@media (max-width: 600px) {
+    nav {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .projets {
+        flex-direction: column;
+    }
+
+    main {
+        padding: 15px;
+    }
+
+    header {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+}
+
+nav {
+    background-color: #222;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 12px;
+    border-radius: 5px;
+}
+
+nav a:hover {
+    background-color: #444;
+}
+
+button, .btn {
+    display: inline-block;
+    background-color: #008cff;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover, .btn:hover {
+    background-color: #006dcc;
+}
+
+.projet {
+    background-color: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    transition: transform 0.2s ease;
+}
+
+.projet:hover {
+    transform: translateY(-5px);
+}
+
+.projet h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+@media (max-width: 600px) {
+    .projets {
+        grid-template-columns: 1fr;
+    }
+
+    .projet {
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
+
+@media (max-width: 600px) {
+    body {
+        font-size: 16px;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    .projet {
+        padding: 18px;
+    }
+}
