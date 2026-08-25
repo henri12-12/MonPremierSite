@@ -392,3 +392,48 @@ footer p {
     padding: 15px 30px;
     text-decoration: none;
 }
+
+/* ============================= */
+/* PROJETS ET CONTACT            */
+/* Même présentation que le site */
+/* ============================= */
+
+.page-violet main {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.page-violet main section {
+    margin: 40px 0;
+    text-align: left;
+}
+
+.page-violet main h2 {
+    color: white;
+    margin-bottom: 20px;
+}
+
+.page-violet main p {
+    color: white;
+    line-height: 1.8;
+}
+
+.page-violet main strong {
+    color: white;
+}
+
+.page-violet .bouton {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 12px 24px;
+    background-color: white;
+    color: #172a8a;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+.page-violet .bouton:hover {
+    opacity: 0.85;
+}
