@@ -26,7 +26,7 @@ export default async function handler(req, res) {
 
     if (!response.ok) {
       return res.status(response.status).json({
-        error: data.error?.message || "Erreur OpenAI"
+        error: data.error?.message || JSON.stringify(data)
       });
     }
 
