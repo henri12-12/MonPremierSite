@@ -315,3 +315,14 @@ footer p {
         margin-bottom: 25px;
     }
 }
+
+.projet .bouton {
+    display: inline-block;
+    padding: 12px 20px;
+    margin-top: 15px;
+    text-decoration: none;
+    border-radius: 8px;
+    background-color: #ffffff;
+    border: 2px solid #000000;
+    color: #000000;
+}
