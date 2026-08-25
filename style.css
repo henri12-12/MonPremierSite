@@ -353,3 +353,32 @@ footer p {
 .page-violet .logo-ia {
     color: white;
 }
+
+/* PAGE CONTACT - même interface que les autres pages */
+.page-violet main {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.page-violet main h2 {
+    color: white;
+    margin-top: 40px;
+}
+
+.page-violet main p {
+    color: white;
+    line-height: 1.8;
+}
+
+.page-violet main a {
+    color: white;
+}
+
+.page-violet main section {
+    margin: 40px auto;
+}
+
+.page-violet main strong {
+    color: white;
+}
