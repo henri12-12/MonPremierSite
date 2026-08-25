@@ -151,7 +151,232 @@
             ↑ Retour en haut
         </a>
     </footer>
+<!-- Assistance IA -->
+<button id="ai-button" type="button">🤖 Assistance IA</button>
 
+<div id="ai-chat">
+    <div id="ai-header">
+        <strong>🤖 Assistance IA</strong>
+        <button id="ai-close" type="button">×</button>
+    </div>
+
+    <div id="ai-messages">
+        <div class="ai-message">
+            Bonjour 👋 Je suis votre assistant IA. Comment puis-je vous aider ?
+        </div>
+    </div>
+
+    <div id="ai-input-area">
+        <input
+            id="ai-input"
+            type="text"
+            placeholder="Écrivez votre message..."
+            autocomplete="off"
+        >
+        <button id="ai-send" type="button">Envoyer</button>
+    </div>
+</div>
+
+<style>
+#ai-button {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+    z-index: 9999;
+    border: none;
+    border-radius: 30px;
+    padding: 14px 20px;
+    background: #111827;
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.25);
+}
+
+#ai-chat {
+    display: none;
+    position: fixed;
+    right: 25px;
+    bottom: 85px;
+    width: 350px;
+    max-width: calc(100vw - 40px);
+    height: 480px;
+    z-index: 10000;
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.25);
+    border: 1px solid #ddd;
+}
+
+#ai-header {
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 15px;
+    background: #111827;
+    color: white;
+}
+
+#ai-close {
+    border: none;
+    background: transparent;
+    color: white;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+#ai-messages {
+    height: 350px;
+    padding: 15px;
+    overflow-y: auto;
+    background: #f8fafc;
+}
+
+.ai-message,
+.user-message {
+    padding: 10px 12px;
+    margin-bottom: 10px;
+    border-radius: 12px;
+    max-width: 85%;
+    line-height: 1.4;
+}
+
+.ai-message {
+    background: #e5e7eb;
+    color: #111827;
+}
+
+.user-message {
+    margin-left: auto;
+    background: #111827;
+    color: white;
+}
+
+#ai-input-area {
+    display: flex;
+    gap: 8px;
+    padding: 10px;
+    border-top: 1px solid #ddd;
+}
+
+#ai-input {
+    flex: 1;
+    min-width: 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+}
+
+#ai-send {
+    border: none;
+    border-radius: 8px;
+    padding: 10px 12px;
+    background: #111827;
+    color: white;
+    cursor: pointer;
+}
+
+#ai-send:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+</style>
+
+<script>
+const aiButton = document.getElementById("ai-button");
+const aiChat = document.getElementById("ai-chat");
+const aiClose = document.getElementById("ai-close");
+const aiInput = document.getElementById("ai-input");
+const aiSend = document.getElementById("ai-send");
+const aiMessages = document.getElementById("ai-messages");
+
+aiButton.addEventListener("click", () => {
+    aiChat.style.display = "block";
+    aiInput.focus();
+});
+
+aiClose.addEventListener("click", () => {
+    aiChat.style.display = "none";
+});
+
+function addMessage(text, type) {
+    const message = document.createElement("div");
+    message.className = type === "user" ? "user-message" : "ai-message";
+    message.textContent = text;
+    aiMessages.appendChild(message);
+    aiMessages.scrollTop = aiMessages.scrollHeight;
+}
+
+async function sendMessage() {
+    const message = aiInput.value.trim();
+
+    if (!message) return;
+
+    addMessage(message, "user");
+
+    aiInput.value = "";
+    aiSend.disabled = true;
+    aiInput.disabled = true;
+
+    addMessage("Je réfléchis…", "ai");
+
+    const loadingMessage = aiMessages.lastElementChild;
+
+    try {
+        const response = await fetch("/api/chat", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                message: message
+            })
+        });
+
+        const data = await response.json();
+
+        loadingMessage.remove();
+
+        if (!response.ok) {
+            throw new Error(data.error || "Une erreur est survenue.");
+        }
+
+        const answer =
+            data.output_text ||
+            data.output ||
+            data.response ||
+            data.message ||
+            data.text ||
+            "Je n'ai pas reçu de réponse.";
+
+        addMessage(answer, "ai");
+
+    } catch (error) {
+        loadingMessage.remove();
+        addMessage(
+            "Désolé, une erreur est survenue. Veuillez réessayer.",
+            "ai"
+        );
+        console.error(error);
+    }
+
+    aiSend.disabled = false;
+    aiInput.disabled = false;
+    aiInput.focus();
+}
+
+aiSend.addEventListener("click", sendMessage);
+
+aiInput.addEventListener("keydown", (event) => {
+    if (event.key === "Enter") {
+        sendMessage();
+    }
+});
+</script>
 </body>
 
 </html>
