@@ -660,3 +660,79 @@ footer p {
         font-size: 1.8rem;
     }
 }
+
+/* ===== ESPACE MONÉTISATION ===== */
+
+.monetisation {
+    text-align: center;
+    padding: 75px 20px;
+}
+
+.monetisation h2 {
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+}
+
+.monetisation-intro {
+    max-width: 750px;
+    margin: 0 auto 45px;
+    line-height: 1.7;
+}
+
+.offres-cartes {
+    max-width: 1050px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.offre-carte {
+    padding: 35px 25px;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(0,0,0,.09);
+    transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.offre-carte:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(0,0,0,.15);
+}
+
+.offre-icone {
+    font-size: 45px;
+    margin-bottom: 15px;
+}
+
+.offre-carte h3 {
+    margin-bottom: 12px;
+    font-size: 1.4rem;
+}
+
+.offre-carte p {
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.offre-bouton {
+    display: inline-block;
+    padding: 12px 22px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    background: #32106f;
+    color: white;
+}
+
+.offre-bouton:hover {
+    opacity: .85;
+}
+
+@media (max-width: 800px) {
+    .offres-cartes {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+    }
+}
+
