@@ -331,3 +331,25 @@ footer p {
     color: #6a1b9a;
     font-weight: bold;
 }
+
+.page-violet {
+    background-color: #26006b;
+    color: white;
+    padding: 25px 6% 50px;
+}
+
+.page-violet nav a {
+    color: white;
+}
+
+.page-violet h1 {
+    color: white;
+}
+
+.page-violet p {
+    color: white;
+}
+
+.page-violet .logo-ia {
+    color: white;
+}
