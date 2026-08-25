@@ -354,31 +354,41 @@ footer p {
     color: white;
 }
 
-/* PAGE CONTACT - même interface que les autres pages */
+/* =========================
+   PAGE CONTACT
+   Même interface que les autres pages
+   ========================= */
+
 .page-violet main {
     max-width: 900px;
     margin: 0 auto;
+    padding: 20px;
     text-align: center;
+}
+
+.page-violet main section {
+    margin: 40px auto;
+    max-width: 800px;
 }
 
 .page-violet main h2 {
     color: white;
-    margin-top: 40px;
+    margin-bottom: 20px;
 }
 
 .page-violet main p {
     color: white;
     line-height: 1.8;
-}
-
-.page-violet main a {
-    color: white;
-}
-
-.page-violet main section {
-    margin: 40px auto;
+    margin-bottom: 20px;
 }
 
 .page-violet main strong {
     color: white;
+}
+
+.page-violet main a.bouton {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 15px 30px;
+    text-decoration: none;
 }
