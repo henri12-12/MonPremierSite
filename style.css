@@ -437,3 +437,52 @@ footer p {
 .page-violet .bouton:hover {
     opacity: 0.85;
 }
+
+/* Adaptation pour téléphone */
+@media (max-width: 768px) {
+    body {
+        font-size: 16px;
+        overflow-x: hidden;
+    }
+
+    .hero {
+        padding: 20px 15px;
+    }
+
+    .navigation {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .navigation a {
+        font-size: 14px;
+        padding: 8px 10px;
+    }
+
+    main {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 20px 15px;
+    }
+
+    .page-violet {
+        width: 100%;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 20px 15px;
+    }
+
+    .page-violet main {
+        padding: 0;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .bouton {
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+}
