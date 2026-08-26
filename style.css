@@ -736,3 +736,62 @@ footer p {
     }
 }
 
+/* ===== PAGE EBOOKS ===== */
+
+.ebooks-page {
+    text-align: center;
+}
+
+.ebooks-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.ebook-card {
+    background: #ffffff;
+    padding: 35px 25px;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    text-align: center;
+}
+
+.ebook-icon {
+    font-size: 50px;
+    margin-bottom: 15px;
+}
+
+.ebook-numero {
+    display: block;
+    color: #4b168c;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.ebook-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+}
+
+.ebook-card p {
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.ebook-card button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+@media (max-width: 900px) {
+    .ebooks-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .ebooks-grid {
+        grid-template-columns: 1fr;
+    }
+}
