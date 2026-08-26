@@ -893,4 +893,87 @@ footer p {
         font-size: 24px;
     }
 
+
+    /* =========================================================
+   ESPACE PREMIUM
+   Design de la page premium uniquement
+   ========================================================= */
+
+body:has(.premium-acces) {
+    background: #f7f8fc;
 }
+
+/* En-tête Premium */
+body:has(.premium-acces) .hero {
+    background: linear-gradient(135deg, #4527a0, #6a3fb5);
+    color: #ffffff;
+    padding: 70px 20px;
+    text-align: center;
+}
+
+body:has(.premium-acces) .hero-content {
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+body:has(.premium-acces) .hero .etiquette {
+    color: #ffffff;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+body:has(.premium-acces) .hero h1 {
+    color: #ffffff;
+    margin: 18px 0;
+    font-size: 42px;
+}
+
+body:has(.premium-acces) .hero p:not(.etiquette) {
+    max-width: 700px;
+    margin: 0 auto;
+    color: #f4f1ff;
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+/* Sections Premium */
+body:has(.premium-acces) .section {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 70px 20px;
+}
+
+body:has(.premium-acces) .section > h2 {
+    text-align: center;
+    font-size: 32px;
+    margin: 15px 0;
+}
+
+body:has(.premium-acces) .section > p:not(.etiquette) {
+    max-width: 760px;
+    margin: 0 auto 45px;
+    text-align: center;
+    line-height: 1.7;
+}
+
+/* Étiquette */
+body:has(.premium-acces) .etiquette {
+    text-align: center;
+    font-weight: 700;
+    color: #5b35a6;
+    letter-spacing: 1px;
+}
+
+/* Grille des contenus */
+body:has(.premium-acces) .formations-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+/* Cartes */
+body:has(.premium-acces) .formation-card {
+    background: #ffffff;
+    border-radius: 22px;
+    padding: 32px 26px;
+    box-shadow: 0 10
