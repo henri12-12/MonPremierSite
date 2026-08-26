@@ -795,3 +795,102 @@ footer p {
         grid-template-columns: 1fr;
     }
 }
+
+/* ================================
+   FORMATIONS
+================================ */
+
+.formations-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.formation-card {
+    background: #ffffff;
+    border-radius: 24px;
+    padding: 35px 30px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.formation-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+}
+
+.formation-icone {
+    font-size: 55px;
+    margin-bottom: 20px;
+}
+
+.formation-card .numero {
+    display: block;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #4b1b8f;
+}
+
+.formation-card h3 {
+    font-size: 26px;
+    margin-bottom: 18px;
+}
+
+.formation-card p {
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+.formation-card h4 {
+    text-align: left;
+    margin: 20px 0 12px;
+}
+
+.formation-card ul {
+    text-align: left;
+    line-height: 1.8;
+    padding-left: 22px;
+    margin-bottom: 25px;
+}
+
+.formation-card .offre-bouton {
+    display: inline-block;
+    text-decoration: none;
+}
+
+
+/* ================================
+   FORMATIONS - TABLETTE
+================================ */
+
+@media (max-width: 900px) {
+
+    .formations-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+/* ================================
+   FORMATIONS - TÉLÉPHONE
+================================ */
+
+@media (max-width: 600px) {
+
+    .formations-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .formation-card {
+        padding: 30px 22px;
+    }
+
+    .formation-card h3 {
+        font-size: 24px;
+    }
+
+}
