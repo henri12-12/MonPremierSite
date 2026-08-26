@@ -1010,3 +1010,90 @@ body:has(.premium-acces) .formation-card {
 .projet .bouton:active {
     transform: translateY(0);
 }
+
+/* =========================================
+   PROJETS — EN SAVOIR PLUS
+========================================= */
+
+.projet-titre {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.projet-titre h3 {
+    margin: 0;
+}
+
+.en-savoir-plus {
+    flex-shrink: 0;
+    padding: 8px 14px;
+    background: transparent;
+    color: #26006b;
+    border: 1.5px solid #26006b;
+    border-radius: 7px;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.en-savoir-plus:hover {
+    background-color: #26006b;
+    color: white;
+    transform: translateY(-2px);
+}
+
+.description-projet {
+    display: none;
+    margin-top: 25px;
+    padding: 22px;
+    background-color: #f5f7ff;
+    border-radius: 12px;
+    border-left: 4px solid #26006b;
+}
+
+.description-projet.active {
+    display: block;
+}
+
+.description-projet h4 {
+    margin: 0 0 15px;
+    color: #26006b;
+    font-size: 18px;
+}
+
+.description-projet p {
+    margin-bottom: 15px;
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+.description-projet strong {
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 8px;
+    color: #26006b;
+}
+
+@media (max-width: 700px) {
+
+    .projet-titre {
+        align-items: flex-start;
+    }
+
+    .projet-titre h3 {
+        font-size: 21px;
+    }
+
+    .en-savoir-plus {
+        font-size: 12px;
+        padding: 7px 10px;
+    }
+
+    .description-projet {
+        padding: 18px;
+    }
+}
