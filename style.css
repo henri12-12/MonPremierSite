@@ -1106,3 +1106,22 @@ body:has(.premium-acces) .formation-card {
 .description-projet.active {
     display: block;
 }
+
+/* Bouton En savoir + */
+.en-savoir-plus {
+    display: inline-block;
+    margin-left: 15px;
+    padding: 7px 12px;
+    background-color: #26006b;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.en-savoir-plus:hover {
+    opacity: 0.85;
+    transform: translateY(-2px);
+}
