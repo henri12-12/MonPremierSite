@@ -1097,22 +1097,22 @@ body:has(.premium-acces) .formation-card {
         padding: 18px;
     }
 }
-/* Description des projets */
+
 .description-projet {
-    display: none;
+    display: none !important;
     margin-top: 20px;
 }
 
 .description-projet.active {
-    display: block;
+    display: block !important;
 }
 
-/* Bouton En savoir + */
-.en-savoir-plus {
+/ * Bouton En savoir + */
+.enb-savoir-plus {
     display: inline-block;
-    margin-left: 15px;
+    bmargin-left: 15px;
     padding: 7px 12px;
-    background-color: #26006b;
+    bbackground-color: #26006b;
     color: #ffffff;
     border: none;
     border-radius: 6px;
