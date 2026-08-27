@@ -1260,7 +1260,7 @@ body:has(.premium-acces) .formation-card {
    ================================ */
 
 .menu-toggle {
-    display: none;
+    display: flex;
     width: 46px;
     height: 46px;
     padding: 10px;
