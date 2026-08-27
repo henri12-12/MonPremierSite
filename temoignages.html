@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Donner mon avis | Henri Nova</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .temoignage-page {
+            max-width: 850px;
+            margin: 60px auto;
+            padding: 20px;
+        }
+
+        .temoignage-intro {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .temoignage-intro h1 {
+            margin-bottom: 15px;
+        }
+
+        .temoignage-intro p {
+            max-width: 700px;
+            margin: auto;
+            line-height: 1.7;
+        }
+
+        .temoignage-form {
+            background: #ffffff;
+            padding: 35px;
+            border-radius: 18px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .form-group {
+            margin-bottom: 22px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 14px;
+            border: 1px solid #d1d5db;
+            border-radius: 8px;
+            font-size: 16px;
+            box-sizing: border-box;
+            font-family: inherit;
+        }
+
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .note {
+            display: flex;
+            gap: 8px;
+            flex-direction: row-reverse;
+            justify-content: flex-end;
+        }
+
+        .note input {
+            display: none;
+        }
+
+        .note label {
+            font-size: 30px;
+            cursor: pointer;
+            color: #cbd5e1;
+            transition: 0.2s;
+        }
+
+        .note label:hover,
+        .note label:hover ~ label,
+        .note input:checked ~ label {
+            color: #f5b301;
+        }
+
+        .bouton-envoyer-temoignage {
+            display: inline-block;
+            width: 100%;
+            padding: 15px 20px;
+            background-color: #25D366;
+            color: #ffffff;
+            border: none;
+            border-radius: 8px;
+            font-size: 17px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+
+        .bouton-envoyer-temoignage:hover {
+            background-color: #1ebe5d;
+            transform: translateY(-2px);
+        }
+
+        .retour-accueil {
+            display: block;
+            text-align: center;
+            margin-top: 25px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .temoignage-page {
+                margin: 30px auto;
+                padding: 15px;
+            }
+
+            .temoignage-form {
+                padding: 25px 18px;
+            }
+
+            .temoignage-intro h1 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="hero">
+
+        <nav class="navigation">
+            <a href="index.html">Accueil</a>
+            <a href="a-propos.html">À propos</a>
+            <a href="projets.html">Projets</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+
+    </header>
+
+
+    <main class="temoignage-page">
+
+        <div class="temoignage-intro">
+
+            <p class="etiquette">VOTRE AVIS COMPTE</p>
+
+            <h1>💬 Donnez votre témoignage</h1>
+
+            <p>
+                Vous avez découvert mes projets, utilisé une de mes ressources
+                ou acheté un ebook ? Votre retour est précieux et m'aide
+                à améliorer continuellement mon travail.
+            </p>
+
+        </div>
+
+
+        <form class="temoignage-form" onsubmit="envoyerTemoignage(event)">
+
+            <div class="form-group">
+
+                <label for="nom">Votre nom</label>
+
+                <input
+                    type="text"
+                    id="nom"
+                    placeholder="Ex. Jean Dupont"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>Votre note</label>
+
+                <div class="note">
+
+                    <input type="radio" id="etoile5" name="note" value="5" required>
+                    <label for="etoile5">★</label>
+
+                    <input type="radio" id="etoile4" name="note" value="4">
+                    <label for="etoile4">★</label>
+
+                    <input type="radio" id="etoile3" name="note" value="3">
+                    <label for="etoile3">★</label>
+
+                    <input type="radio" id="etoile2" name="note" value="2">
+                    <label for="etoile2">★</label>
+
+                    <input type="radio" id="etoile1" name="note" value="1">
+                    <label for="etoile1">★</label>
+
+                </div>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="message">Votre témoignage</label>
+
+                <textarea
+                    id="message"
+                    placeholder="Partagez votre expérience..."
+                    required
+                ></textarea>
+
+            </div>
+
+
+            <button type="submit" class="bouton-envoyer-temoignage">
+                💬 Envoyer mon témoignage sur WhatsApp
+            </button>
+
+        </form>
+
+
+        <a href="index.html" class="retour-accueil">
+            ← Retour à l'accueil
+        </a>
+
+    </main>
+
+
+    <script>
+
+        function envoyerTemoignage(event) {
+
+            event.preventDefault();
+
+            const nom = document.getElementById("nom").value.trim();
+
+            const message = document.getElementById("message").value.trim();
+
+            const noteSelectionnee = document.querySelector(
+                'input[name="note"]:checked'
+            );
+
+            if (!noteSelectionnee) {
+                alert("Veuillez sélectionner une note.");
+                return;
+            }
+
+            const note = noteSelectionnee.value;
+
+            const texte =
+                "Bonjour Henri, je souhaite vous laisser un témoignage.%0A%0A" +
+                "👤 Nom : " + encodeURIComponent(nom) + "%0A" +
+                "⭐ Note : " + encodeURIComponent(note + "/5") + "%0A%0A" +
+                "💬 Témoignage :%0A" +
+                encodeURIComponent(message);
+
+            const whatsapp =
+                "https://wa.me/2290152589242?text=" + texte;
+
+            window.open(whatsapp, "_blank");
+        }
+
+    </script>
+
+</body>
+
+</html>
