@@ -1127,22 +1127,21 @@ body:has(.premium-acces) .formation-card {
 }
 
 .bouton-whatsapp {
-    display: inline-block;
+    display: inline-block !important;
     margin-top: 20px;
-    margin-left: 15px;
-    padding: 18px 28px;
-    background-color: #25D366;
-    color: #ffffff;
-    text-decoration: none;
+    padding: 16px 28px;
+    background-color: #25D366 !important;
+    color: #ffffff !important;
+    text-decoration: none !important;
     font-weight: bold;
-    font-size: 17px;
     border-radius: 10px;
-    border: 2px solid #25D366;
-    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s ease;
 }
 
 .bouton-whatsapp:hover {
-    background-color: #1ebe5d;
-    border-color: #1ebe5d;
+    background-color: #1ebe5d !important;
+    color: #ffffff !important;
     transform: translateY(-2px);
 }
