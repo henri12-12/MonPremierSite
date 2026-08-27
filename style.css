@@ -1145,3 +1145,22 @@ body:has(.premium-acces) .formation-card {
     color: #ffffff !important;
     transform: translateY(-2px);
 }
+
+/* ==================== BOUTON TÉMOIGNAGE ==================== */
+
+.bouton-temoignage {
+    display: inline-block;
+    margin: 18px auto;
+    padding: 12px 22px;
+    background-color: #2563eb;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.bouton-temoignage:hover {
+    background-color: #1d4ed8;
+    transform: translateY(-2px);
+}
