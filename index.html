@@ -15,17 +15,30 @@
 
     <link rel="stylesheet" href="style.css">
 </head>
+n! 
 
 <body>
 
     <header class="hero">
 
         <nav class="navigation">
-            <a href="index.html">Accueil</a>
-            <a href="a-propos.html">À propos</a>
-            <a href="projets.html">Projets</a>
-            <a href="contact.html">Contact</a>
-        </nav>
+
+    <button class="menu-toggle" aria-label="Ouvrir le menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <div class="menu-liens">
+        <a href="index.html">Accueil</a>
+        <a href="a-propos.html">À propos</a>
+        <a href="projets.html">Projets</a>
+        <a href="contact.html">Contact</a>
+        <a href="ebooks.html" class="boutique-link">🛍️ Boutique</a>
+    </div>
+
+</nav>
+
         <a href="temoignages.html" class="bouton-temoignage">
     💬 Donner mon avis
 </a>
@@ -550,6 +563,30 @@ function toggleProjet(bouton) {
         bouton.textContent = "En savoir +";
     }
 }
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const menuToggle = document.querySelector(".menu-toggle");
+    const menuLiens = document.querySelector(".menu-liens");
+
+    if (menuToggle && menuLiens) {
+
+        menuToggle.addEventListener("click", function () {
+            menuLiens.classList.toggle("active");
+        });
+
+        const liens = menuLiens.querySelectorAll("a");
+
+        liens.forEach(function (lien) {
+            lien.addEventListener("click", function () {
+                menuLiens.classList.remove("active");
+            });
+        });
+
+    }
+
+});
 </script>
 
 </body>

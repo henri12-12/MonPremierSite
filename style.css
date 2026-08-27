@@ -1164,3 +1164,93 @@ body:has(.premium-acces) .formation-card {
     background-color: #1d4ed8;
     transform: translateY(-2px);
 }
+
+/* ================================
+   MENU MOBILE
+================================ */
+
+.menu-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 28px;
+    height: 3px;
+    margin: 5px 0;
+    border-radius: 3px;
+    background: #ffffff;
+    transition: 0.3s ease;
+}
+
+.menu-liens {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.boutique-link {
+    font-weight: 700;
+}
+
+/* ================================
+   ANDROID / MOBILE
+================================ */
+
+@media (max-width: 768px) {
+
+    .navigation {
+        position: relative;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 15px 20px;
+    }
+
+    .menu-toggle {
+        display: block;
+        position: relative;
+        z-index: 1001;
+    }
+
+    .menu-liens {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 20px;
+        right: 20px;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 15px;
+        background: #ffffff;
+        border-radius: 14px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+        z-index: 1000;
+    }
+
+    .menu-liens.active {
+        display: flex;
+    }
+
+    .menu-liens a {
+        display: block;
+        padding: 15px;
+        text-decoration: none;
+        color: #260066;
+        font-weight: 700;
+        border-bottom: 1px solid #eeeeee;
+    }
+
+    .menu-liens a:last-child {
+        border-bottom: none;
+    }
+
+    .menu-liens .boutique-link {
+        color: #2563eb;
+    }
+}
