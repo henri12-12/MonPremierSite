@@ -1271,13 +1271,12 @@ body:has(.premium-acces) .formation-card {
     justify-content: center;
     align-items: center;
     gap: 6px;
-}
 
-.menu-toggle span {
+    .menu-toggle span {
     display: block;
-    width: 28px;
+    width: 25px;
     height: 3px;
-    background: white;
+    background: #ffffff;
     border-radius: 3px;
 }
 
