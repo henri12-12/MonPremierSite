@@ -1385,4 +1385,34 @@ body:has(.premium-acces) .formation-card {
         padding: 15px 10px !important;
     }
 
-    
+    /* ===== GRAND ACCÈS BOUTIQUE ===== */
+
+.boutique-acces {
+    text-align: center;
+    padding: 50px 20px;
+    margin: 30px auto 50px;
+}
+
+.grand-boutique {
+    display: inline-block;
+    padding: 22px 45px;
+    font-size: 22px;
+    font-weight: 800;
+    text-decoration: none;
+    color: #ffffff;
+    background: linear-gradient(135deg, #26006b, #6a2cff);
+    border-radius: 18px;
+    box-shadow: 0 10px 30px rgba(38, 0, 107, 0.30);
+    transition: all 0.3s ease;
+}
+
+.grand-boutique:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 35px rgba(38, 0, 107, 0.40);
+}
+
+.boutique-acces p {
+    margin-top: 18px;
+    font-size: 16px;
+    color: #666666;
+}
