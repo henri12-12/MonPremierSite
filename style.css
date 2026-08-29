@@ -1385,33 +1385,4 @@ body:has(.premium-acces) .formation-card {
         padding: 15px 10px !important;
     }
 
-    /* Les 3 traits disparaissent */
-    .menu-toggle {
-        display: none !important;
-    }
-
-    /* Les 5 liens restent toujours visibles */
-    .menu-liens {
-        display: flex !important;
-        position: static !important;
-        width: 100% !important;
-        padding: 0 !important;
-        margin: 0 !important;
-        background: transparent !important;
-        box-shadow: none !important;
-        flex-direction: row !important;
-        justify-content: center !important;
-        align-items: center !important;
-        gap: 20px !important;
-    }
-
-    .menu-liens a {
-        display: block !important;
-        width: auto !important;
-        padding: 8px 5px !important;
-        color: #ffffff !important;
-        text-decoration: none !important;
-        font-weight: 600 !important;
-        white-space: nowrap !important;
-    }
-}
+    
